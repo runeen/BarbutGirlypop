@@ -15,7 +15,10 @@ namespace BarbutGirlypop
             {
                 this.color = Suits.Spades;
             }
-            this.color = Suits.Hearts;
+            else
+            {
+                this.color = Suits.Hearts;
+            }
         }
 
         public Suits GetType()
@@ -27,7 +30,7 @@ namespace BarbutGirlypop
         {
             return 15;
         }
-
+        override
         public string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -43,6 +46,23 @@ namespace BarbutGirlypop
             sb.Append(" JOKER");
 
             return sb.ToString();
+        }
+
+        public void PrintCarte()
+        {
+            if (color == Suits.Spades)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write("BLACK");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write("RED");
+            }
+
+            Console.Write(" JOKER");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

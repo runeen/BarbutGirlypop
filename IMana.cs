@@ -11,6 +11,9 @@ namespace BarbutGirlypop
         void addCarte(ICarte carte);
         ICarte  popCarte(int pozitie);
         List<ICarte> peekCarti(int nrCarti);
-        void shuffle();
+        void shuffle(Random r);
+        int getLength();
+        string ToString();
+        bool hasNext();
     }
 }

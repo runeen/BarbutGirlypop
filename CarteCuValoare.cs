@@ -30,6 +30,33 @@ namespace BarbutGirlypop
         }
 
 
+        public void PrintCarte()
+        {
+            if (value == 11)      Console.Write("Ace");
+            else if (value == 12) Console.Write("Jack");
+            else if (value == 13) Console.Write("Queen");
+            else if (value == 14) Console.Write("King");
+            else                  Console.Write(value.ToString());
+
+            Console.Write(" of ");
+
+            if(suit == Suits.Diamonds)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+            }
+            else if(suit == Suits.Hearts)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if(suit == Suits.Spades)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+
+            Console.Write(suit.ToString());
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         override
         public string ToString()
         {

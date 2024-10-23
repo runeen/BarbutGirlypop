@@ -12,6 +12,8 @@ namespace BarbutGirlypop
         int GetValue();
 
         string ToString();
+
+        void PrintCarte();
     }
     enum Suits
     {

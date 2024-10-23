@@ -10,13 +10,36 @@ namespace BarbutGirlypop
     {
         static void Main(string[] args)
         {
-            ICarte test = new CarteCuValoare(Suits.Clubs, 12);
+            Random r = new Random();
+            List<ICarte> lista1 = new List<ICarte>();
+            List<ICarte> lista2 = new List<ICarte>();
 
-            Console.WriteLine(test.ToString());
+            for(int i = 2; i < 14; i++)
+            {
+                lista1.Add(new CarteCuValoare(Suits.Clubs, i));
+                lista1.Add(new CarteCuValoare(Suits.Diamonds, i));
+                lista2.Add(new CarteCuValoare(Suits.Spades, i));
+                lista2.Add(new CarteCuValoare(Suits.Hearts, i));
+            }
 
-            test = new CarteJoker(Suits.Diamonds);
+            lista1.Add(new CarteJoker(Suits.Clubs));
+            lista2.Add(new CarteJoker(Suits.Hearts));
 
-            Console.WriteLine(test.ToString());
+            IMana mana1 = new Mana(lista1);
+            IMana mana2 = new Mana(lista2);
+
+            mana1.shuffle(r);
+            mana2.shuffle(r);
+
+
+            Console.WriteLine(mana1);
+            Console.WriteLine(mana2);
+
+            IJoc joc = new JocConsola();
+
+            joc.setJucatori(mana1, mana2);
+
+            joc.RunJoc();
 
             Console.ReadKey();
         }

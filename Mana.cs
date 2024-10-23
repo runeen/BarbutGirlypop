@@ -9,11 +9,19 @@ namespace BarbutGirlypop
     class Mana : IMana
     {
         List<ICarte> carti;
-        public Mana() { }
+        public Mana() 
+        {
+            carti = new List<ICarte>();
+        }
         
         public Mana(List<ICarte> carti)
         {
             this.carti = carti;
+        }
+
+        public int getLength()
+        {
+            return carti.Count;
         }
 
         public void addCarte(ICarte carte)
@@ -38,12 +46,33 @@ namespace BarbutGirlypop
             return cartiDeVazut;
         }
 
-        //TODO: fa asta sa mearga
-        public void shuffle()
+        public void shuffle(Random r)
         {
-            Random.Shared.Shuffle(carti);
+            ICarte temp;
+            int randVal;
+            for (int i = 0; i < carti.Count - 1; i++)
+            {
+                randVal = r.Next(i + 1, carti.Count);
+                temp = carti[i];
+                carti[i] = carti[randVal];
+                carti[randVal] = temp;
+            }
+        }
+        override
+        public String ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < carti.Count; i++)
+            {
+                sb.Append(i + ". " + carti[i] + " \n");
+            }
+            return sb.ToString();
         }
 
+        public bool hasNext()
+        {
+            return carti.Count > 0;
+        }
     }   
 
 }
