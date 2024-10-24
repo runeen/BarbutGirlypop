@@ -15,11 +15,4 @@ namespace BarbutGirlypop
 
         void PrintCarte();
     }
-    enum Suits
-    {
-        Clubs,
-        Hearts,
-        Spades,
-        Diamonds
-    }
 }

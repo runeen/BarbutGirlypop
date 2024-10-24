@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CarteJoker.cs" />
     <Compile Include="CarteCuValoare.cs" />
+    <Compile Include="WeaknessManager.cs" />
     <Compile Include="IJoc.cs" />
     <Compile Include="JocConsola.cs" />
     <Compile Include="Mana.cs" />

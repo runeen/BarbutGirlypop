@@ -8,15 +8,20 @@ namespace BarbutGirlypop
 {
     class Mana : IMana
     {
+
+        public Stack<ICarte> stackCartiInJoc;
+
         List<ICarte> carti;
         public Mana() 
         {
             carti = new List<ICarte>();
+            stackCartiInJoc = new Stack<ICarte>();
         }
         
         public Mana(List<ICarte> carti)
         {
             this.carti = carti;
+            stackCartiInJoc = new Stack<ICarte>();
         }
 
         public int getLength()
@@ -73,6 +78,28 @@ namespace BarbutGirlypop
         {
             return carti.Count > 0;
         }
-    }   
+
+        public void stackPush(ICarte carte)
+        {
+            stackCartiInJoc.Push(carte);
+        }
+
+        public ICarte stackPeek()
+        {
+            return stackCartiInJoc.Peek();
+        }
+
+        public ICarte stackPop()
+        {
+            return stackCartiInJoc.Pop();
+        }
+
+        public int stackCount()
+        {
+            return stackCartiInJoc.Count;
+        }
+
+
+    }
 
 }

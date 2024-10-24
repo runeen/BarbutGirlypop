@@ -10,10 +10,20 @@ namespace BarbutGirlypop
     {
         void addCarte(ICarte carte);
         ICarte  popCarte(int pozitie);
-        List<ICarte> peekCarti(int nrCarti);
+        void stackPush(ICarte carte);
+        ICarte stackPeek();
+        ICarte stackPop();
+        int stackCount();
         void shuffle(Random r);
         int getLength();
         string ToString();
         bool hasNext();
+    }
+    enum Suits
+    {
+        Clubs,
+        Hearts,
+        Spades,
+        Diamonds
     }
 }
