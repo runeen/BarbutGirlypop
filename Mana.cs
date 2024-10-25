@@ -99,6 +99,20 @@ namespace BarbutGirlypop
             return stackCartiInJoc.Count;
         }
 
+        public void onRoundWin(IMana manaOpusa)
+        {
+            Suits suitManaOpusa = manaOpusa.stackPeek().GetType();
+            Suits suitMana = this.stackPeek().GetType();
+
+            if(WeaknessManager.compareSuits(suitMana, suitManaOpusa))
+            {
+                if(manaOpusa.hasNext())
+                {
+                    manaOpusa.stackPush(manaOpusa.popCarte(0));
+                    Console.WriteLine("{0} este slab impotriva {1}!", suitManaOpusa, suitMana);
+                }
+            }
+        }
 
     }
 

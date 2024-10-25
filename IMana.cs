@@ -18,6 +18,7 @@ namespace BarbutGirlypop
         int getLength();
         string ToString();
         bool hasNext();
+        void onRoundWin(IMana manaOpusa);
     }
     enum Suits
     {

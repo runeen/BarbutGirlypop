@@ -76,7 +76,8 @@ namespace BarbutGirlypop
             output.Append("Castiga: ");
             if (jucatori[0].stackPeek().GetValue() > jucatori[1].stackPeek().GetValue())
             {
-                while(jucatori[0].stackCount() > 0)
+                jucatori[0].onRoundWin(jucatori[1]);   
+                while (jucatori[0].stackCount() > 0)
                 {
                     jucatori[0].addCarte(jucatori[0].stackPop());
                 }
@@ -90,6 +91,7 @@ namespace BarbutGirlypop
             }
             else if (jucatori[0].stackPeek().GetValue() < jucatori[1].stackPeek().GetValue())
             {
+                jucatori[1].onRoundWin(jucatori[0]);
                 while (jucatori[0].stackCount() > 0)
                 {
                     jucatori[1].addCarte(jucatori[0].stackPop());
